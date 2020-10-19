@@ -1,0 +1,15 @@
+version: "3"
+services:
+  travel-plan-mongo:
+    image: mongo:4.0
+    container_name: mongo.local
+    command: --smallfiles
+    ports:
+      - 27017:27017
+    volumes:
+      - /opt/mongodb:/data/db
+
+networks:
+  default:
+    external:
+      name: test-dev-shared-network
